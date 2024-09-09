@@ -50,7 +50,7 @@ ExpressLane es una plataforma diseñada para facilitar la gestión y el seguimie
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tuusuario/expresslane.git
+   git clone https://github.com/jsblandonm/ExpressLane.git
 
 2. Configura la base de datos en el archivo src/main/resources/application.properties:
    ```bash
@@ -74,7 +74,5 @@ ExpressLane es una plataforma diseñada para facilitar la gestión y el seguimie
 ## Licencia
 
 Este proyecto está bajo la licencia MIT.
-
-Solo necesitas copiar y pegar este contenido en tu archivo **README.md** en el repositorio de GitHub. ¡Está listo para usar!
 
 
