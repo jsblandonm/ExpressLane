@@ -52,3 +52,29 @@ ExpressLane es una plataforma diseñada para facilitar la gestión y el seguimie
    ```bash
    git clone https://github.com/tuusuario/expresslane.git
 
+2. Configura la base de datos en el archivo src/main/resources/application.properties:
+   ```bash
+    spring.datasource.url=jdbc:postgresql://localhost:5432/expresslane
+    spring.datasource.username=usuario
+    spring.datasource.password=contraseña
+3. Ejecuta el proyecto con Maven:
+   ```bash
+   mvn spring-boot:run
+4. Accede a la documentación de Swagger en:
+   ```bash
+   http://localhost:8080/swagger-ui.html
+
+## Uso de la API
+
+- Para realizar operaciones protegidas por seguridad (como crear o modificar usuarios/paquetes), deberás autenticarte primero y obtener un token JWT.
+- Las operaciones con roles requieren que uses el header Authorization con el token JWT recibido tras iniciar sesión:
+  ```bash
+  authorization: Bearer <tu-token-jwt>
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT.
+
+Solo necesitas copiar y pegar este contenido en tu archivo **README.md** en el repositorio de GitHub. ¡Está listo para usar!
+
+
