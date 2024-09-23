@@ -23,11 +23,11 @@ public class User {
     @NotNull
     private String name;
 
-    @NonNull
+    @NotNull
     @Column(name = "password")
     private String password;
 
-    @NonNull
+    @NotNull
     @Column(unique = true)
     private String email;
     private String phone;

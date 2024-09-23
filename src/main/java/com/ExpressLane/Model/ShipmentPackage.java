@@ -2,6 +2,7 @@ package com.ExpressLane.Model;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -39,13 +40,13 @@ public class ShipmentPackage {
     @JoinColumn(name = "destination_address_id", nullable = false)
     private Address destinationAddress;
 
-    @NonNull
+    @NotNull
     private BigDecimal weight;
 
-    @NonNull
+    @NotNull
     private String dimensions;
 
-    @NonNull
+    @NotNull
     private String status;
 
 

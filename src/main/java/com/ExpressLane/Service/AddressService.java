@@ -26,22 +26,22 @@ public class AddressService {
     }
 
     //Método para obteer todas las direcciones
-    public List<AddressDTO> getAllAdresses(){
+    public List<AddressDTO> getAllAdresses() {
         List<Address> addresses = addressRepository.findAll();
         return addresses.stream().map(this::mapToDTO).toList();
     }
 
     // Método para obtener una dirección por ID
-    public AddressDTO getAddressByID(Long id){
+    public AddressDTO getAddressByID(Long id) {
         Optional<Address> address = addressRepository.findById(id);
-        if (address.isPresent()){
+        if (address.isPresent()) {
             return mapToDTO(address.get());
         }
         throw new RuntimeException("Address not found with id" + id);
     }
 
     //Método para actulizar una dirección existente
-    public AddressDTO updateAddress(Long id, AddressDTO addressDTO){
+    public AddressDTO updateAddress(Long id, AddressDTO addressDTO) {
         Address existingAddress = addressRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Address not found with id" + id));
         existingAddress.setAddressLine1(addressDTO.getAddressLine1());
@@ -61,14 +61,14 @@ public class AddressService {
     }
 
     //Método para eliminar una dorección por ID
-    public void deleteAddress(Long id){
+    public void deleteAddress(Long id) {
         Address address = addressRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Address not found with id" + id));
         addressRepository.delete(address);
     }
 
     //Método auxiliar para mapear entre Entity y DTO
-    private AddressDTO mapToDTO(Address address){
+    private AddressDTO mapToDTO(Address address) {
         return AddressDTO.builder()
                 .id(address.getId())
                 .userId(address.getUserId().getId())
@@ -112,6 +112,5 @@ public class AddressService {
 
         return address;
     }
-
 
 }

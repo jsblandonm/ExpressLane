@@ -9,5 +9,4 @@ class ExpressLaneApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
